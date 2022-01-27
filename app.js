@@ -1,12 +1,30 @@
 const Discord = require('discord.js');
+//heroku integration/
+const aws = require('aws-sdk');
+////////////////////
+
 const client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.GUILDS]
 });
 const dotenv = require('dotenv');
 dotenv.config();
 
+//Heroku .env files//////////////////////////
+let BOT_TOKEN = new aws.BOT_TOKEN({
+    accessKeyId: process.env.BOT_TOKEN,
+    secretAccessKey: process.env.BOT_TOKEN
+});
 
+let CLIENT_ID = new aws.CLIENT_ID({
+    accessKeyId: process.env.CLIENT_ID,
+    secretAccessKey: process.env.CLIENT_ID
+});
 
+let GUILD_ID = new aws.GUILD_ID({
+    accessKeyId: process.env.GUILD_ID,
+    secretAccessKey: process.env.GUILD_ID
+});
+/////////////////////////////////////////////////
 client.once('ready', () => {
     console.log('successfully started!');
 });
@@ -31,5 +49,6 @@ client.on('interactionCreate', async (interaction) => {
             break;
     }
 })
+
 
 client.login(process.env.BOT_TOKEN);
