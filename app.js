@@ -1,3 +1,5 @@
+//TODO: HEROKU SHIT
+
 const Discord = require('discord.js');
 const client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.GUILDS]
@@ -16,11 +18,11 @@ client.on('interactionCreate', async (interaction) => {
     switch (commandName)
     {
         case 'koks':
-            await interaction.reply('90 ewro 1g Koks ' + '' + interaction.user.username +  ' '+'Schau bruder, Koks nicht guten, bitte besuchen www.kmdd.de');
+            await interaction.reply('90 ewro 1g Koks ' + '' + interaction.user.username +  '\n'+'Schau bruder, Koks nicht guten, bitte besuchen www.kmdd.de');
             console.log('Post Kokspreis');
             break;
         case 'hashish':
-            await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + ' '+ 'Schau bruder, Koks nicht guten, bitte besuchen www.kmdd.de');
+            await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + '\n'+ 'Schau bruder, Koks nicht guten, bitte besuchen www.kmdd.de');
             console.log('Post Hashishpreis');
             break;
         default:
@@ -29,6 +31,5 @@ client.on('interactionCreate', async (interaction) => {
             break;
     }
 })
-
 
 client.login(process.env.BOT_TOKEN);
