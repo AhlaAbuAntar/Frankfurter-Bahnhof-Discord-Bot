@@ -9,9 +9,7 @@
     "aws-sdk": "^2.1065.0",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
-    "dotenv": "^14.3.2",
-    "sound": "^2.7.0",
-    "soundcloud": "^3.3.2"
+    "dotenv": "^14.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
