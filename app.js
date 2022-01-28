@@ -26,6 +26,7 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply('90 ewro 1g Koks ' + '' + interaction.user.username +  '\n'+'Schau bruder, Koks nicht guten, bitte besuchen https://www.kmdd.de');
             console.log('Post Kokspreis');
             break;
+
         case 'hashish':
             await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + '\n'+ 'Schau bruder, Koks nicht guten, bitte besuchen https://www.kmdd.de');
             console.log('Post Hashishpreis');
@@ -36,12 +37,7 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply(quotesOfAhmad);
             console.log('Post Weisheit')
             break;
-        case 'kick':
-            //Set up Quotes of Ahmad Patron
-            const member = interaction.options.getMember('target');
-            member.kick();
-            console.log(interaction.user.username + "" + "Ehrenlos bruder");
-            break;
+
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
