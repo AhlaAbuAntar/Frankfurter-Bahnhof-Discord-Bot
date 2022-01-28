@@ -1,4 +1,3 @@
-//TODO: HEROKU SHIT
 const Discord = require('discord.js');
 const weisheit = require('./quotes.json');
 const client = new Discord.Client({
@@ -12,9 +11,7 @@ dotenv.config();
 client.once('ready', () => {
     console.log('successfully started!');
 });
-//Set up Quotes of Ahmad Patron
-let quotesOfAhmad = weisheit[Math.round((Math.random()))];
-let json = JSON.stringify({quotesOfAhmad : weisheit});
+
 
 //Check if interaction is a Command
 client.on('interactionCreate', async (interaction) => {
@@ -34,7 +31,10 @@ client.on('interactionCreate', async (interaction) => {
             console.log('Post Hashishpreis');
             break;
         case 'weisheit':
+            //Set up Quotes of Ahmad Patron
+            const quotesOfAhmad = weisheit[Math.round((Math.random() * weisheit.length))];
             await interaction.reply(quotesOfAhmad);
+            console.log('Post Weisheit')
             break;
         default:
             await interaction.reply('Karbonat error');
