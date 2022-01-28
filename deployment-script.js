@@ -5,13 +5,14 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const clientId = process.env.CLIENT_ID;
-const guildId = process.env.GUILD_ID;
+const guildId = process.env.BOT_TOKEN;
 const token = process.env.BOT_TOKEN;
 
 const commands = [
     new SlashCommandBuilder().setName('koks').setDescription('Kokspreis'),
     new SlashCommandBuilder().setName('hashish').setDescription('Hashishpreis'),
-    new SlashCommandBuilder().setName('weisheit').setDescription('Krasse Weisheit Whallah')
+    new SlashCommandBuilder().setName('weisheit').setDescription('Krasse Weisheit Whallah'),
+    new SlashCommandBuilder().setName('kick').setDescription('Ehrenlos')
 ]
     .map(command => command.toJSON());
 

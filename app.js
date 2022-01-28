@@ -36,6 +36,12 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply(quotesOfAhmad);
             console.log('Post Weisheit')
             break;
+        case 'kick':
+            //Set up Quotes of Ahmad Patron
+            const member = interaction.options.getMember('target');
+            member.kick();
+            console.log(interaction.user.username + "" + "Ehrenlos bruder");
+            break;
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
