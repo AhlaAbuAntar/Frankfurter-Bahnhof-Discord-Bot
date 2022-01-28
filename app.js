@@ -12,7 +12,6 @@ client.once('ready', () => {
     console.log('successfully started!');
 });
 
-
 //Check if interaction is a Command
 client.on('interactionCreate', async (interaction) => {
     if(!interaction.isCommand()) return;
@@ -31,12 +30,14 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + '\n'+ 'Schau bruder, Koks nicht guten, bitte besuchen https://www.kmdd.de');
             console.log('Post Hashishpreis');
             break;
+
         case 'weisheit':
             //Set up Quotes of Ahmad Patron
             const quotesOfAhmad = weisheit[Math.round((Math.random() * weisheit.length))];
             await interaction.reply(quotesOfAhmad);
-            console.log('Post Weisheit')
+            console.log('Post Weisheit');
             break;
+
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
