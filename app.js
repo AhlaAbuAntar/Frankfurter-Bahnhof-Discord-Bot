@@ -37,7 +37,6 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply(quotesOfAhmad);
             console.log('Post Weisheit')
             break;
-
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
