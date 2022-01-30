@@ -11,6 +11,7 @@ const commands = [
     new SlashCommandBuilder().setName('koks').setDescription('Kokspreis'),
     new SlashCommandBuilder().setName('hashish').setDescription('Hashishpreis'),
     new SlashCommandBuilder().setName('weisheit').setDescription('Krasse Weisheit Whallah'),
+    new SlashCommandBuilder().setName('impfung').setDescription('Krasse Impfung Whallah')
 ]
     .map(command => command.toJSON());
 

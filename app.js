@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const weisheit = require('./quotes.json');
+const { MessageEmbed } = require('discord.js');
 const client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.GUILDS]
 });
@@ -22,12 +23,14 @@ client.on('interactionCreate', async (interaction) => {
     switch (commandName)
     {
         case 'koks':
-            await interaction.reply('90 ewro 1g Koks ' + '' + interaction.user.username +  '\n'+'Schau bruder, Koks nicht guten, bitte besuchen https://www.kmdd.de');
+            await interaction.reply('85 ewro 1g Koks ' +  '' + interaction.user.username  + '\n'+
+                'Schau bruder Koks nicht guten, bitte besuchen https://www.kmdd.de');
             console.log('Post Kokspreis');
             break;
 
         case 'hashish':
-            await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + '\n'+ 'Schau bruder, Koks nicht guten, bitte besuchen https://www.kmdd.de');
+            await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + '\n'+
+                'Schau bruder Hashish nicht guten, bitte besuchen https://www.kmdd.de');
             console.log('Post Hashishpreis');
             break;
 
@@ -38,6 +41,15 @@ client.on('interactionCreate', async (interaction) => {
             console.log('Post Weisheit');
             break;
 
+        case 'impfung':
+            //Set up vaccine
+            const impfungEmbed = new MessageEmbed()
+                .setTitle('FRANKFURT AM MAIN ALLLLLLLLLLLLLLLLE')
+                .setDescription('LAK EINFACH IMPFUNG KRASS WHALLAH')
+                .setImage('https://preview.redd.it/oiszt98yqmf61.jpg?auto=webp&s=ff0f3d4324b9f0f474fc30c90f8fc17f26d684c5');
+             await interaction.reply({ embeds: [impfungEmbed] });
+             console.log("vaccine injected");
+            break;
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
