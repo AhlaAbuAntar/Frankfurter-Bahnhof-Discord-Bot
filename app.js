@@ -29,9 +29,17 @@ client.on('interactionCreate', async (interaction) => {
             break;
 
         case 'hashish':
-            await interaction.reply('10 ewro 1g Hashish ' +  '' + interaction.user.username  + '\n'+
-                'Schau bruder Hashish nicht guten, bitte besuchen https://www.kmdd.de');
-            console.log('Post Hashishpreis');
+            if(interaction.user.username != 'wadafacc')
+            {
+                await interaction.reply('10 ewro 1g Hashish \n' +
+                    interaction.user.username + ', Schau bruder Hashish nicht guten, bitte besuchen https://www.kmdd.de');
+                console.log('Post Hashishpreis');
+            }
+            else
+            {
+                await interaction.reply('Timo du bisch so hässlich sogar dealer wend dir kein Hashish verkaufe');
+                console.log('Timo is a dog');
+            }
             break;
 
         case 'weisheit':
@@ -50,10 +58,14 @@ client.on('interactionCreate', async (interaction) => {
              await interaction.reply({ embeds: [impfungEmbed] });
              console.log("vaccine injected");
             break;
+        case 'suicide':
+            await interaction.reply('Nicht gut diesen, rufen bitte diesen: 143');
+            break;
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
             break;
+
     }
 })
 
