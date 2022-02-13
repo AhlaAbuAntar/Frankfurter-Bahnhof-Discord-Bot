@@ -13,6 +13,7 @@ const commands = [
     new SlashCommandBuilder().setName('weisheit').setDescription('Krasse Weisheit Whallah'),
     new SlashCommandBuilder().setName('impfung').setDescription('Krasse Impfung Whallah'),
     new SlashCommandBuilder().setName('suicide').setDescription('Bruder nein'),
+    new SlashCommandBuilder().setName('alphasong').setDescription('Einmal hören, einmal krass')
 ]
     .map(command => command.toJSON());
 

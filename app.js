@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const axios = require('axios');
 const weisheit = require('./quotes.json');
 const { MessageEmbed } = require('discord.js');
 const client = new Discord.Client({
@@ -43,12 +44,20 @@ client.on('interactionCreate', async (interaction) => {
             break;
 
         case 'weisheit':
-            //Set up Quotes of Ahmad Patron
+            //Set up quotes of Ahmad Patron Miri
             const quotesOfAhmad = weisheit[Math.round((Math.random() * weisheit.length))];
             await interaction.reply(quotesOfAhmad);
             console.log('Post Weisheit');
             break;
 
+        case 'alphasong':
+            axios.get('http://www.songrequest.rest/alpha')
+                .then( resp => {
+                        let alphaSong = resp.data[Math.round(Math.random() * resp.data.length)];
+                        interaction.reply(alphaSong.title  + "\n" + alphaSong.spotify_link);
+                        console.log('Post alpha song');
+                });
+            break;
         case 'impfung':
             //Set up vaccine
             const impfungEmbed = new MessageEmbed()
