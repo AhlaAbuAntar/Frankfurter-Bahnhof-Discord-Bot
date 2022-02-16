@@ -57,6 +57,7 @@ client.on('interactionCreate', async (interaction) => {
                         interaction.reply(alphaSong.title  + "\n" + alphaSong.spotify_link);
                         console.log('Post alpha song');
                 });
+            break;
         case 'deepsong':
             axios.get('http://www.songrequest.rest/deep')
                 .then( resp => {
