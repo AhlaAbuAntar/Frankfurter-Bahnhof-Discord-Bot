@@ -57,6 +57,13 @@ client.on('interactionCreate', async (interaction) => {
                         interaction.reply(alphaSong.title  + "\n" + alphaSong.spotify_link);
                         console.log('Post alpha song');
                 });
+        case 'deepsong':
+            axios.get('http://www.songrequest.rest/deep')
+                .then( resp => {
+                    let deepSong = resp.data[Math.round(Math.random() * resp.data.length)];
+                    interaction.reply(deepSong.title + "\n" + deepSong.spotify_link);
+                    console.log('Post deep song');
+                });
             break;
         case 'impfung':
             //Set up vaccine
