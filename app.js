@@ -61,9 +61,9 @@ client.on('interactionCreate', async (interaction) => {
         case 'deepsong':
             axios.get('http://www.songrequest.rest/deep')
                 .then( resp => {
-                    let deepSong = resp.data[Math.round(Math.random() * resp.data.length)];
-                    interaction.reply(deepSong.title + "\n" + deepSong.spotify_link);
-                    console.log('Post deep song');
+                        let deepSong = resp.data[Math.round(Math.random() * resp.data.length)];
+                        interaction.reply(deepSong.title + "\n" + deepSong.spotify_link);
+                        console.log('Post deep song');
                 });
             break;
         case 'impfung':
