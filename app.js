@@ -23,26 +23,15 @@ client.on('interactionCreate', async (interaction) => {
     //Switch cases of interaction
     switch (commandName)
     {
-        case 'koks':
-            await interaction.reply('85 ewro 1g Koks ' +  '' + interaction.user.username  + '\n'+
-                'Schau bruder Koks nicht guten, bitte besuchen https://www.kmdd.de');
+        case 'überfall':
+            await interaction.reply('Gahn go lerne du bastard was für Überfall');
             console.log('Post Kokspreis');
             break;
 
-        case 'hashish':
-            if(interaction.user.username != 'wadafacc')
-            {
-                await interaction.reply('10 ewro 1g Hashish \n' +
-                    interaction.user.username + ', Schau bruder Hashish nicht guten, bitte besuchen https://www.kmdd.de');
-                console.log('Post Hashishpreis');
-            }
-            else
-            {
-                await interaction.reply('Timo du bisch so hässlich sogar dealer wend dir kein Hashish verkaufe');
-                console.log('Timo is a dog');
-            }
+        case 'kush':
+                await interaction.reply('De Kush isch scho baut');
+                console.log('Kush wurde angebaut');
             break;
-
         case 'weisheit':
             //Set up quotes of Ahmad Patron Miri
             const quotesOfAhmad = weisheit[Math.round((Math.random() * weisheit.length))];
