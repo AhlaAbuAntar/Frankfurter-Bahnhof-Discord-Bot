@@ -71,6 +71,7 @@ client.on('interactionCreate', async (interaction) => {
         case 'suicide':
             await interaction.reply('Nicht gut diesen, rufen bitte diesen: 143');
             break;
+
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
