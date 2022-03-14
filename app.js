@@ -24,7 +24,7 @@ client.on('interactionCreate', async (interaction) => {
     switch (commandName)
     {
         case 'einbruch':
-            await interaction.reply('Gahd was für Überfan go lerne du überfall');
+            await interaction.reply('Gahn go lerne was für überfall');
             console.log('Post Überfall');
             break;
 
