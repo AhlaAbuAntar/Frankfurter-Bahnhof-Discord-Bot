@@ -23,14 +23,16 @@ client.on('interactionCreate', async (interaction) => {
     //Switch cases of interaction
     switch (commandName)
     {
-        case 'überfall':
-            await interaction.reply('Gahn go lerne du bastard was für Überfall');
+        case 'einbruch':
+            await interaction.reply('Gahd was für Überfan go lerne du überfall');
             console.log('Post Überfall');
             break;
+
         case 'kush':
                 await interaction.reply('De Kush isch scho baut');
                 console.log('Kush wurde angebaut');
             break;
+
         case 'weisheit':
             //Set up quotes of Ahmad Patron Miri
             const quotesOfAhmad = weisheit[Math.round((Math.random() * weisheit.length))];
@@ -46,6 +48,7 @@ client.on('interactionCreate', async (interaction) => {
                         console.log('Post alpha song');
                 });
             break;
+
         case 'deepsong':
             axios.get('http://www.songrequest.rest/deep')
                 .then( resp => {
@@ -54,6 +57,7 @@ client.on('interactionCreate', async (interaction) => {
                         console.log('Post deep song');
                 });
             break;
+
         case 'impfung':
             //Set up vaccine
             const impfungEmbed = new MessageEmbed()
@@ -63,6 +67,7 @@ client.on('interactionCreate', async (interaction) => {
              await interaction.reply({ embeds: [impfungEmbed] });
              console.log("vaccine injected");
             break;
+
         case 'suicide':
             await interaction.reply('Nicht gut diesen, rufen bitte diesen: 143');
             break;
