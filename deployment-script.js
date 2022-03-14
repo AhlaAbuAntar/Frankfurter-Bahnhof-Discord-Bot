@@ -8,8 +8,8 @@ const clientId = process.env.CLIENT_ID;
 const token = process.env.BOT_TOKEN;
 
 const commands = [
-    new SlashCommandBuilder().setName('koks').setDescription('Kokspreis'),
-    new SlashCommandBuilder().setName('hashish').setDescription('Hashishpreis'),
+    new SlashCommandBuilder().setName('einbruch').setDescription('einbruch planen'),
+    new SlashCommandBuilder().setName('kush').setDescription('was isch baut?'),
     new SlashCommandBuilder().setName('weisheit').setDescription('Krasse Weisheit Whallah'),
     new SlashCommandBuilder().setName('impfung').setDescription('Krasse Impfung Whallah'),
     new SlashCommandBuilder().setName('suicide').setDescription('Bruder nein'),
