@@ -25,9 +25,8 @@ client.on('interactionCreate', async (interaction) => {
     {
         case 'überfall':
             await interaction.reply('Gahn go lerne du bastard was für Überfall');
-            console.log('Post Kokspreis');
+            console.log('Post Überfall');
             break;
-
         case 'kush':
                 await interaction.reply('De Kush isch scho baut');
                 console.log('Kush wurde angebaut');
@@ -71,7 +70,6 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
             break;
-
     }
 })
 
