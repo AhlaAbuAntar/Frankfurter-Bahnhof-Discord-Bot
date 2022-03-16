@@ -74,7 +74,6 @@ client.on('interactionCreate', async (interaction) => {
             break;
 
         case 'nutrition':
-            //TODO: Get specific nutritionReq
             let nutritionReq = interaction.options.get("nutrition").value;
             axios({
                 method: 'GET',
