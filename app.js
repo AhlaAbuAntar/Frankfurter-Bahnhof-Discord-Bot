@@ -79,7 +79,7 @@ client.on('interactionCreate', async (interaction) => {
                 method: 'GET',
                 url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
                 headers: {
-                    'X-Api-Key': API_TOKEN
+                    'X-Api-Key': process.env.API_TOKEN
                 },
             }).then( resp => {
                 let nutritionResp = resp.data[0];
