@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const axios = require('axios');
-const request = require('request');
 const weisheit = require('./quotes.json');
 const { MessageEmbed } = require('discord.js');
 const client = new Discord.Client({
