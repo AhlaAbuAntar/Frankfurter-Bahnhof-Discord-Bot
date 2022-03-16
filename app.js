@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const axios = require('axios');
+const request = require('request');
 const weisheit = require('./quotes.json');
 const { MessageEmbed } = require('discord.js');
 const client = new Discord.Client({
@@ -72,6 +73,22 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply('Nicht gut diesen, rufen bitte diesen: 143');
             break;
 
+        case 'nutrition':
+            let nutritionReq;
+            axios({
+                method: 'GET',
+                url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
+                headers: {
+                    'X-Api-Key': API_KEY
+                },
+            }).then( resp => {
+                let nutritionResp = resp.data[nutritionReq === nutritionReq.name];
+                interaction.reply("Name" + nutritionResp.name + "\n Calories:" + nutritionResp.calories + '\n Protein:' +
+                nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
+                console.log('Nutrition send');
+            })
+
+            break;
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
