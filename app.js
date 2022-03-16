@@ -75,7 +75,7 @@ client.on('interactionCreate', async (interaction) => {
 
         case 'nutrition':
             //TODO: Get specific nutritionReq
-            let nutritionReq = interaction.options.get().value;
+            let nutritionReq = interaction.options.get("Nutrition").value;
             axios({
                 method: 'GET',
                 url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
@@ -83,7 +83,7 @@ client.on('interactionCreate', async (interaction) => {
                     'X-Api-Key': API_KEY
                 },
             }).then( resp => {
-                let nutritionResp = resp.data[nutritionReq === nutritionReq.name];
+                let nutritionResp = resp.data[0];
                 interaction.reply("Name" + nutritionResp.name + "\n Calories:" + nutritionResp.calories + '\n Protein:' +
                 nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
                 console.log('Nutrition send');
