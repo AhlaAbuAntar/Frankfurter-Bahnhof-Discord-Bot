@@ -75,7 +75,7 @@ client.on('interactionCreate', async (interaction) => {
 
         case 'nutrition':
             //TODO: Get specific nutritionReq
-            let nutritionReq = interaction.options.get("Nutrition").value;
+            let nutritionReq = interaction.options.get("nutrition").value;
             axios({
                 method: 'GET',
                 url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
