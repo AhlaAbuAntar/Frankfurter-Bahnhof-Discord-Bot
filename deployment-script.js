@@ -17,7 +17,9 @@ const commands = [
     new SlashCommandBuilder().setName('suicide').setDescription('Bruder nein'),
     new SlashCommandBuilder().setName('alphasong').setDescription('Einmal hören, einmal krass'),
     new SlashCommandBuilder().setName('deepsong').setDescription('Harte Zeiten'),
-    new SlashCommandBuilder().setName('nutrition').setDescription('Breiter als 3 Türsteher')
+    new SlashCommandBuilder().setName('nutrition').setDescription('Breiter als 3 Türsteher').addStringOption(
+        option => option.setName('nutrition').setRequired(true))
+
 ]
     .map(command => command.toJSON());
 
