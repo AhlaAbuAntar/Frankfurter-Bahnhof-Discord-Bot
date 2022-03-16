@@ -80,7 +80,7 @@ client.on('interactionCreate', async (interaction) => {
                 method: 'GET',
                 url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
                 headers: {
-                    'X-Api-Key': API_KEY
+                    'X-Api-Key': API_TOKEN
                 },
             }).then( resp => {
                 let nutritionResp = resp.data[0];
@@ -88,8 +88,8 @@ client.on('interactionCreate', async (interaction) => {
                 nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
                 console.log('Nutrition send');
             })
-
             break;
+
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');

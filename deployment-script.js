@@ -2,10 +2,12 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const dotenv = require('dotenv');
+const {isRequired} = require("nodemon/lib/utils");
 dotenv.config();
 
 const clientId = process.env.CLIENT_ID;
 const token = process.env.BOT_TOKEN;
+const apiToken =  process.env.API_TOKEN;
 
 const commands = [
     new SlashCommandBuilder().setName('einbruch').setDescription('einbruch planen'),
@@ -15,7 +17,7 @@ const commands = [
     new SlashCommandBuilder().setName('suicide').setDescription('Bruder nein'),
     new SlashCommandBuilder().setName('alphasong').setDescription('Einmal hören, einmal krass'),
     new SlashCommandBuilder().setName('deepsong').setDescription('Harte Zeiten'),
-    new SlashCommandBuilder().setName('nutrition').setDescription('Breiter als 3 Türsteher')
+    new SlashCommandBuilder().setName('nutrition').setDescription('Breiter als 3 Türsteher').addUserOption('nutrition')
 ]
     .map(command => command.toJSON());
 
