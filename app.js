@@ -16,6 +16,8 @@ client.once('ready', () => {
 
 //Check if interaction is a Command
 client.on('interactionCreate', async (interaction) => {
+    try{
+
     if(!interaction.isCommand()) return;
 
     const {commandName} = interaction;
@@ -74,24 +76,28 @@ client.on('interactionCreate', async (interaction) => {
 
         case 'nutrition':
             let nutritionReq = interaction.options.get("nutrition").value;
-            axios({
+            const resp = await axios({
                 method: 'get',
                 url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
                 headers: {
                     'X-Api-Key': process.env.API_TOKEN
                 },
-            }).then( resp => {
-                let nutritionResp = resp.data[0];
-                interaction.reply("Calories:" + nutritionResp.calories + '\n Protein:' +
-                nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
-                console.log('Nutrition send');
             });
+            let nutritionResp = resp.data[0];
+            interaction.reply("Calories:" + nutritionResp.calories + '\n Protein:' +
+            nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
+            console.log('Nutrition send');
+
             break;
 
         default:
             await interaction.reply('Karbonat error');
             console.log('Karbonat error');
             break;
+    }
+    } catch (error) {
+        await interaction.reply('Karbonat error');
+        console.log(error);
     }
 })
 
