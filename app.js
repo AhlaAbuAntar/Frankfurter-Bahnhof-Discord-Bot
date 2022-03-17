@@ -87,7 +87,7 @@ client.on('interactionCreate', async (interaction) => {
             const nutritionText = [
                 `Calories: ${nutritionResp.calories}`,
                 `Protein: ${nutritionResp.protein_g}`,
-                `Carbohydrats: ${nutritionResp.carbohydrates_total_g}`
+                `Carbohydrates: ${nutritionResp.carbohydrates_total_g}`
             ].join("\n");
             interaction.reply(nutritionText);
             console.log('Nutrition send');
