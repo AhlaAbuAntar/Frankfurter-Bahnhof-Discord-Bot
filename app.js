@@ -83,9 +83,13 @@ client.on('interactionCreate', async (interaction) => {
                 },
                 transformResponse: (data) => JSON.parse(data),
             });
-            let nutritionResp = resp.data.items[0];
-            interaction.reply("Calories:" + nutritionResp.calories + '\n Protein:' +
-            nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
+            const nutritionResp = resp.data.items[0];
+            const nutritionText = [
+                `Calories: ${nutritionResp.calories}`,
+                `Protein: ${nutritionResp.protein_g}`,
+                `Carbohydrats: ${nutritionResp.carbohydrates_total_g}`
+            ].join("\n");
+            interaction.reply(nutritionText);
             console.log('Nutrition send');
             break;
 
