@@ -76,8 +76,7 @@ client.on('interactionCreate', async (interaction) => {
 
         case 'nutrition':
             let nutritionReq = interaction.options.get("nutrition").value;
-            const resp = await axios({
-                method: 'get',
+            const resp = await axios.get({
                 url: `https://api.calorieninjas.com/v1/nutrition?query=${nutritionReq}`,
                 headers: {
                     'X-Api-Key': process.env.API_TOKEN
