@@ -82,12 +82,12 @@ client.on('interactionCreate', async (interaction) => {
                 headers: {
                     'X-Api-Key': process.env.API_TOKEN
                 },
+                transformResponse: (data) => JSON.parse(data),
             });
-            let nutritionResp = resp.data[0];
+            let nutritionResp = resp.data.items[0];
             interaction.reply("Calories:" + nutritionResp.calories + '\n Protein:' +
             nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
             console.log('Nutrition send');
-
             break;
 
         default:
