@@ -85,7 +85,7 @@ client.on('interactionCreate', async (interaction) => {
                 interaction.reply("Calories:" + nutritionResp.calories + '\n Protein:' +
                 nutritionResp.protein_g + '\n Carbohydrats' + nutritionResp.carbohydrates_total_g);
                 console.log('Nutrition send');
-            })
+            });
             break;
 
         default:
